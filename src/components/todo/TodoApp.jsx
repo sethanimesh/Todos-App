@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import {BrowserRouter, Routes, Route, useNavigate, useParams } from 'react-router-dom'
+import {BrowserRouter, Routes, Route, useNavigate, useParams, Link } from 'react-router-dom'
 import './TodoApp.css'
 
 export default function TodoApp(){
@@ -94,7 +94,7 @@ function WelcomeComponent(){
     return (
         <div className='welcome'>
             <h1>Welcome in {username}</h1>
-            Welcome Component
+            To access Your Todos - <Link to="/listtodos">Click Here!</Link>
         </div>
     )
 }
