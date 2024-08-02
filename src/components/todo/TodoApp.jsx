@@ -5,15 +5,20 @@ import './TodoApp.css'
 export default function TodoApp(){
     return (
         <>
+            <HeaderComponent/>
             <BrowserRouter>
                 <Routes>
                     <Route path="/" element={<LoginComponent/>}></Route>
                     <Route path="/login" element={<LoginComponent/>}></Route>
                     <Route path="/welcome/:username" element={<WelcomeComponent/>}></Route>
                     <Route path="/listtodos" element={<ListTodosComponent/>}/>
+                    <Route path="/logout" element={<LogoutComponent/>}/>
+                    
                     <Route path="*" element={<ErrorComponent/>}></Route>
+                    
                 </Routes>
             </BrowserRouter>
+            <FooterComponent/>
         </>
     )
 }
@@ -131,7 +136,7 @@ function ListTodosComponent(){
                             <th>ID</th>
                             <th>DESCRIPTION</th>
                             <th>IS DONE?</th>
-                            <th>TARGET DATW</th>
+                            <th>TARGET DATE</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -150,6 +155,31 @@ function ListTodosComponent(){
                     </tbody>
                 </table>
             </div>
+        </div>
+    )
+}
+
+function HeaderComponent(){
+    return (
+        <div className='headerComponent'>
+            Header <hr/>
+        </div>
+    )
+}
+
+function FooterComponent(){
+    return (
+        <div className='footerComponent'>
+            Footer<hr/>
+        </div>
+    )
+}
+
+function LogoutComponent(){
+    return (
+        <div className='logoutComponent'>
+            <h1>Logout</h1>
+            <div>You have been successfully logged out</div>
         </div>
     )
 }
