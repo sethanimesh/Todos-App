@@ -5,8 +5,8 @@ import './TodoApp.css'
 export default function TodoApp(){
     return (
         <>
-            <HeaderComponent/>
             <BrowserRouter>
+                <HeaderComponent/>
                 <Routes>
                     <Route path="/" element={<LoginComponent/>}></Route>
                     <Route path="/login" element={<LoginComponent/>}></Route>
@@ -17,8 +17,8 @@ export default function TodoApp(){
                     <Route path="*" element={<ErrorComponent/>}></Route>
                     
                 </Routes>
+                <FooterComponent/>
             </BrowserRouter>
-            <FooterComponent/>
         </>
     )
 }
@@ -161,17 +161,36 @@ function ListTodosComponent(){
 
 function HeaderComponent(){
     return (
-        <div className='headerComponent'>
-            Header <hr/>
+        <header className="border-bottom border-light border-5 mb-5 p-2">
+        <div className="container">
+            <div className="row">
+                <nav className="navbar navbar-expand-lg">
+                    <a className="navbar-brand ms-2 fs-2 fw-bold text-black" href="www.google.com">sethanimesh</a>
+                    <div className="collapse navbar-collapse">
+                        <ul className="navbar-nav">
+                            <li className="nav-item fs-5"><Link className="nav-link" to="/welcome/sethanimesh">Home</Link></li>
+                            <li className="nav-item fs-5"><Link className="nav-link" to="/todos">Todos</Link></li>
+                        </ul>
+                    </div>
+                    <ul className="navbar-nav">
+                        <li className="nav-item fs-5"><Link className="nav-link" to="/login">Login</Link></li>
+                        <li className="nav-item fs-5"><Link className="nav-link" to="/logout">Logout</Link></li>
+                    </ul>
+                </nav>
+            </div>
         </div>
+    </header>
+
     )
 }
 
 function FooterComponent(){
     return (
-        <div className='footerComponent'>
-            Footer<hr/>
-        </div>
+        <footer className='footer'>
+            <div className='container'>
+                Footer
+            </div>
+        </footer>
     )
 }
 
