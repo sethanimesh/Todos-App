@@ -24,14 +24,13 @@ export default function LoginComponent(){
     }
 
     function handleSubmit(){
-        if ((username==="sethanimesh") && (password==="dummy")){
-            authContext.setAuthenticated(true)
+        if (authContext.login(username, password)){
             navigate(`/welcome/${username}`)
             setSuccessMessage(true)
             setErrorMessage(false)
         }
         else{
-            authContext.setAuthenticated(false)
+            authContext.logout()
             setSuccessMessage(false)
             setErrorMessage(true)
         }

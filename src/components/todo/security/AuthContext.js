@@ -15,7 +15,24 @@ export default function AuthProvider({children}){
     //Update states every few seconds
     // setInterval(()=>setNumber(number+1) ,10000)
 
-    const valueToBeShared = {number, isAuthenticated, setAuthenticated}
+    function login(username, password){
+        if ((username==="sethanimesh") && (password==="dummy")){
+            setAuthenticated(true)
+            return true
+        }
+        else{
+            setAuthenticated(false)
+            return false
+        }
+    }
+
+    function logout(){
+        setAuthenticated(false)
+    }
+
+    const valueToBeShared = {number, isAuthenticated, setAuthenticated, login, logout}
+
+    
 
     return (
         <AuthContext.Provider value = {valueToBeShared}>
