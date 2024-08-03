@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import {BrowserRouter, Routes, Route, useNavigate, useParams, Link } from 'react-router-dom'
+import {BrowserRouter, Routes, Route, useNavigate, useParams, Link} from 'react-router-dom'
 import './TodoApp.css'
 
 export default function TodoApp(){
@@ -127,10 +127,10 @@ function ListTodosComponent(){
     ]
 
     return (
-        <div className='ListTodosComponent'>
+        <div className="container">
             <h1>Things to do</h1>
             <div>
-                <table>
+                <table className='table'>
                     <thead>
                         <tr>
                             <th>ID</th>
