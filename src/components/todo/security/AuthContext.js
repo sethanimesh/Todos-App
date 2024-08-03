@@ -11,11 +11,14 @@ export default function AuthProvider({children}){
     //Put some state in context
     const[number, setNumber] = useState(10)
 
+    const[isAuthenticated, setAuthenticated] = useState(false)
     //Update states every few seconds
-    setInterval(()=>setNumber(number+1) ,10000)
+    // setInterval(()=>setNumber(number+1) ,10000)
+
+    const valueToBeShared = {number, isAuthenticated, setAuthenticated}
 
     return (
-        <AuthContext.Provider value = {{number}}>
+        <AuthContext.Provider value = {valueToBeShared}>
             {children}
         </AuthContext.Provider>
     )
