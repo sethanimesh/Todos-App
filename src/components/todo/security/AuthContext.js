@@ -12,16 +12,19 @@ export default function AuthProvider({children}){
     const[number, setNumber] = useState(10)
 
     const[isAuthenticated, setAuthenticated] = useState(false)
+    const[username, setUsername] = useState(null)
     //Update states every few seconds
     // setInterval(()=>setNumber(number+1) ,10000)
 
     function login(username, password){
         if ((username==="sethanimesh") && (password==="dummy")){
             setAuthenticated(true)
+            setUsername(username)
             return true
         }
         else{
             setAuthenticated(false)
+            setUsername(null)
             return false
         }
     }
@@ -30,7 +33,7 @@ export default function AuthProvider({children}){
         setAuthenticated(false)
     }
 
-    const valueToBeShared = {number, isAuthenticated, setAuthenticated, login, logout}
+    const valueToBeShared = {number, isAuthenticated, setAuthenticated, login, logout, username}
 
     
 
